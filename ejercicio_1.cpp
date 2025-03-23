@@ -1,8 +1,7 @@
 // Pascal.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
-// SIN TERMINAR!!!
+//
 
 #include <iostream>
-#include <string>
 
 int powTen(int num) {
     int result = 1;
@@ -20,16 +19,17 @@ int main()
     std::cout << "Piramide de Pascal generada automaticamente!\n";
     // se espera obtener:
     // 1 - 1 1 - 1 2 1 - 1 3 3 1 - 1 4 6 4 1 - 1 5 10 10 5 1 - 1 6 15 20 15 6 1
-    int pascal[7];
+    const int size = 7;
+    int pascal[size];
 
     //normalizo el array a 0
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < size; i++) {
         pascal[i] = 0;
     }
 
     pascal[0] = 1;
 
-    for (int i = 1; i < 7; i++) {//2
+    for (int i = 1; i < size; i++) {//2
         int pow = powTen(i+1);        //100
         //std::cout << "i: "<< i << std::endl;
         //std::cout << "pow: " << pow << std::endl;
@@ -53,10 +53,11 @@ int main()
             //std::cout << "tempFour: " << tempFour << std::endl;
 
             pascal[i] = pow + tempFour;
+            //std::cout << tempFour << std::endl;
         }
     }
 
-    for (int i = 0; i < 7; i++) {
+    for (int i = 0; i < size; i++) {
         std::cout << pascal[i] << std::endl;
     }
 
